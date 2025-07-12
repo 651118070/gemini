@@ -110,25 +110,26 @@ export  function Main() {
         </div>
       )}
 
-      <div className="area flex rounded-xl border p-3 justify-between items-end w-full">
-        <textarea
-          onChange={(e) => setInput(e.target.value)}
-          value={input}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.shiftKey) {
-              e.preventDefault(); // Prevents newline if Enter is pressed without Shift
-              onSent();
-            }
-          }}
-          className="outline-0  flex-grow mr-2 pt-4 resize-none"
-          placeholder="Enter your prompt here"
-          rows={2}
-        />
-        <Send
-          className="hover:scale-105 cursor-pointer"
-          onClick={() => onSent()}
-        />
-      </div>
+<div className="area flex flex-col md:flex-row rounded-xl border mt-4 md:mt-2 p-5 md:p-2 justify-between items-end w-full gap-2">
+  <textarea
+    onChange={(e) => setInput(e.target.value)}
+    value={input}
+    onKeyDown={(e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        onSent();
+      }
+    }}
+    className="outline-0 flex-grow resize-none w-full md:w-auto pt-4"
+    placeholder="Enter your prompt here"
+    rows={1}
+  />
+  <Send
+  size={20}
+    className="hover:scale-105 cursor-pointer "
+    onClick={() => onSent()}
+  />
+</div>
 
       <footer className="text-center text-sm font-mono text-gray-500 py-4">
         &copy; 2024-{new Date().getFullYear()} — Done by POLA · Web Developer at
