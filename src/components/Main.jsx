@@ -110,7 +110,7 @@ export  function Main() {
         </div>
       )}
 
-      <div className="area flex rounded-xl border p-1 justify-between items-end w-full">
+      <div className="area flex rounded-xl border p-3 justify-between items-end w-full">
         <textarea
           onChange={(e) => setInput(e.target.value)}
           value={input}
